@@ -1,10 +1,10 @@
 const participants = [
   "Mr Sola",
-  "Mr Steve",
+  "Mr Chika",
   "Mr Ileri",
   "Mr Samuel",
   "Mr Tobi",
-  "Mr Chika",
+  "Mr Steve",
 ];
 
 export default participants;
