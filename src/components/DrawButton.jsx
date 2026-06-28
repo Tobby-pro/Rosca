@@ -8,7 +8,7 @@ function DrawButton({
   let buttonText = "🎲 START OFFICIAL DRAW";
 
   if (!drawOpen) {
-    buttonText = "🔒 DRAW OPENS AT 5:15 PM";
+    buttonText = "🔒 DRAW OPENS AT 7:10 PM";
   }
 
   if (isDrawing) {
@@ -21,7 +21,6 @@ function DrawButton({
 
   return (
     <div className="text-center mb-8">
-
       <button
         onClick={onDraw}
         disabled={disabled}
@@ -44,7 +43,6 @@ function DrawButton({
           min-w-[260px]
         "
       >
-
         {isDrawing && (
           <span
             className="
@@ -60,9 +58,7 @@ function DrawButton({
         )}
 
         <span>{buttonText}</span>
-
       </button>
-
     </div>
   );
 }

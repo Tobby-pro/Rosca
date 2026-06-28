@@ -23,8 +23,9 @@ function Home() {
 
       const drawTime = new Date();
 
-      drawTime.setHours(17);
-      drawTime.setMinutes(15);
+      // 🔥 Official draw opens at 7:10 PM
+      drawTime.setHours(19);
+      drawTime.setMinutes(10);
       drawTime.setSeconds(0);
 
       const difference = drawTime - now;
@@ -75,7 +76,6 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-slate-100 p-6">
-
       <Header />
 
       <div className="mt-6">
@@ -83,14 +83,15 @@ function Home() {
       </div>
 
       <div className="bg-white rounded-xl shadow p-6 my-6 text-center">
-
         <h2 className="text-2xl font-bold">
           Official Live Draw
         </h2>
 
         {!drawOpen && (
           <>
-           
+            <p className="text-slate-500 mt-3">
+              Draw opens at <strong>7:10 PM</strong>
+            </p>
 
             <p className="text-5xl font-bold text-blue-600 mt-4">
               {timeLeft}
@@ -109,7 +110,6 @@ function Home() {
             ✅ Official Draw Completed
           </p>
         )}
-
       </div>
 
       <DrawButton
@@ -121,13 +121,12 @@ function Home() {
       />
 
       <DrawResult
-  result={result}
-  hasDrawn={hasDrawn}
-  isDrawing={isDrawing}
-/>
+        result={result}
+        hasDrawn={hasDrawn}
+        isDrawing={isDrawing}
+      />
 
       <Footer />
-
     </div>
   );
 }
