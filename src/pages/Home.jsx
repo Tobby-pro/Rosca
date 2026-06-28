@@ -90,9 +90,7 @@ function Home() {
 
         {!drawOpen && (
           <>
-            <p className="text-slate-500 mt-3">
-              Draw Opens At
-            </p>
+           
 
             <p className="text-5xl font-bold text-blue-600 mt-4">
               {timeLeft}
