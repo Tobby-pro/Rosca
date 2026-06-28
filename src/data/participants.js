@@ -1,5 +1,4 @@
 const participants = [
-  "Mr Sola",
   "Mr Chika",
   "Mr Ileri",
   "Mr Samuel",
