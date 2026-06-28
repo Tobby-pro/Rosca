@@ -1,4 +1,24 @@
-function DrawButton({ onDraw, disabled }) {
+function DrawButton({
+  onDraw,
+  disabled,
+  isDrawing,
+  drawOpen,
+  hasDrawn,
+}) {
+  let buttonText = "🎲 START OFFICIAL DRAW";
+
+  if (!drawOpen) {
+    buttonText = "🔒 DRAW OPENS AT 5:15 PM";
+  }
+
+  if (isDrawing) {
+    buttonText = "Drawing Official Order...";
+  }
+
+  if (hasDrawn) {
+    buttonText = "✅ DRAW COMPLETED";
+  }
+
   return (
     <div className="text-center mb-8">
 
@@ -6,27 +26,41 @@ function DrawButton({ onDraw, disabled }) {
         onClick={onDraw}
         disabled={disabled}
         className="
-          bg-blue-600 hover:bg-blue-700
-          text-white font-semibold
-          px-8 py-4 rounded-xl
+          bg-blue-600
+          hover:bg-blue-700
+          text-white
+          font-semibold
+          px-8
+          py-4
+          rounded-xl
           transition
-          disabled:opacity-50
+          disabled:opacity-70
           disabled:cursor-not-allowed
-          flex items-center justify-center gap-3
+          flex
+          items-center
+          justify-center
+          gap-3
           mx-auto
-          min-w-[180px]
+          min-w-[260px]
         "
       >
-        {disabled ? (
-          <>
-            <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-            <span>Drawing</span>
-          </>
-        ) : (
-          <>
-            🎲 START DRAW
-          </>
+
+        {isDrawing && (
+          <span
+            className="
+              w-5
+              h-5
+              border-2
+              border-white
+              border-t-transparent
+              rounded-full
+              animate-spin
+            "
+          />
         )}
+
+        <span>{buttonText}</span>
+
       </button>
 
     </div>
